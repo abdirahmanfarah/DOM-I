@@ -49,17 +49,50 @@ links.forEach((currentValue, i) => {
 })
 
 // CTA
-const action = document.querySelectorAll('.cta-text');
+const action = document.querySelectorAll('.cta-text *')
 
 action.forEach((item, i) =>{
   item.textContent= Object.values(siteContent.cta)[i]
 })
 
+
+
 const headerImg = document.getElementById("cta-img");
 
 headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
-const button = document.createElement("button");
+// const button = document.getElementsByClassName('button .cta-text').textContent;
 
-button.textContent = 'Get Started!';
-document.body.section.appendChild(button);
+// button.textContent()
+
+// var x = document.getElementById("myBtn").textContent;
+
+// Main-Content 
+
+const main = document.querySelectorAll('.text-content');
+
+main[0].textContent = ('p', siteContent['main-content']['features-content']);
+
+main[1].textContent = ('p', siteContent['main-content']['about-content']);
+
+main[2].textContent = ('p', siteContent['main-content']['services-content']);
+
+main[3].textContent = ('p', siteContent['main-content']['vision-content']);
+
+const bigImg = document.querySelector('.middle-img');
+
+bigImg.setAttribute('src', siteContent['main-content']["middle-img-src"]);
+
+// Features 
+
+const features = document.querySelectorAll('h4 .text-content');
+
+features.forEach((item, i) =>{
+  item.textContent = Object.values(siteContent.main-content[i])
+});
+
+// features.forEach((item, i) =>{
+//   item.textContent = ('h4', siteContent.main-content[0]);
+// })
+
+// features[0].textContent = ('h4', siteContent['main-content']['features-h4']);
